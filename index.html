@@ -10,13 +10,42 @@
   </head>
   <body>
     <div id="app">
-      <h1>{{product}}</h1>
-    </div>
+      <h1>{{ title }}</h1>
+      <img :src="image" />
 
+      <p v-if="inventory > 10">En stock</p>
+      <p v-else-if="inventory <= 10 && inventory > 0">Presque en rupture!</p>
+      <p v-else>En rupture</p>
+
+      <ul>
+        <li v-for="detail in details">{{ detail }}</li>
+      </ul>
+      <div class="variants-wrapper">
+        <div
+          v-for="(variant, index) in variants"
+          :key="variant.id"
+          @mouseover="updateVariant(index)"
+          class="color-circle"
+          :style="{ backgroundColor: variant.color }"
+        ></div>
+      </div>
+
+      <div class="cart">Panier {{ cart }}</div>
+
+      <button
+        class="button"
+        :class="{ disabledButton: !inStock }"
+        :disabled="!inStock"
+        @click="addToCart"
+      >
+        Ajouter au panier
+      </button>
+    </div>
     <!-- Import Js -->
     <script src="./main.js"></script>
+    <!-- Import App -->
     <script>
-        const mountedApp = app.mount('#app')
+      const mountedApp = app.mount('#app')
     </script>
   </body>
 </html>
