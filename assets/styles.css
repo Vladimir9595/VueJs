@@ -10,11 +10,11 @@ https://www.gekkode.com/developpement/tutoriel-utiliser-les-variables-css/
   --whiteColor: #ffffff;
   --grayColor: #d8d8d8;
   --lightGrayColor: #f2f2f2;
-  --defaultBorder:  2px solid #d8d8d8;
+  --defaultBorder: 2px solid #d8d8d8;
   --boxShadow: 2px 15px -12px rgba(0, 0, 0, 0.57);
   --boxShadowVariant: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
-  inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
-  inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
   --breakpointMobile: 600px;
 }
 
@@ -42,7 +42,7 @@ img {
 }
 
 img.is-out-of-stock {
-  opacity:0.5
+  opacity: 0.5;
 }
 
 input {
@@ -87,7 +87,6 @@ ul {
   width: 160px;
   height: 60px;
   margin: 30px;
-  padding: 20px;
   border-radius: 5px;
   background-color: var(--primaryColor);
   box-shadow: var(--boxShadowVariant);
@@ -179,4 +178,22 @@ ul {
   .comment-form {
     width: 90%;
   }
+}
+
+.variants-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.color-circle {
+  width: 50px;
+  height: 50px;
+  margin-top: 8px;
+  border: 2px solid #d8d8d8;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.disabledButton {
+  background-color: #d8d8d8;
+  cursor: not-allowed;
 }
